@@ -4,16 +4,12 @@ export enum RepositoriesTypes {
   CREATE_RESET_PASSWORD_FAILURE = '@createResetPassword/CREATE_RESET_PASSWORD_FAILURE',
 }
 
-export interface IUserCreate {
+export interface ICreateResetPassword {
   email: string
 }
 
-export interface IUserState {
-  user: {
+export interface ICreateResetPasswordState {
+  createResetPassword: {
     loading: boolean
-    profile: {
-      id: number
-      email: string
-    }
   }
 }

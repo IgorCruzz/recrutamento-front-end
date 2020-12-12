@@ -1,6 +1,6 @@
 {
   "*.{ts,tsx}": [
     "eslint \"src/**/**/*.{tsx,ts}\" --fix",
-    "yarn test --watchAll=false "
+    "yarn test --watchAll=false --passWithNoTests"
   ]
 }
