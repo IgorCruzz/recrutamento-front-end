@@ -63,10 +63,14 @@ const UpdateResetPasword: React.FC = () => {
 
         <Form onSubmit={handleSubmit} ref={formRef}>
           <Input name="email" type="email" placeholder="Digite seu e-mail" />
-          <Input name="email" type="password" placeholder="Insira sua nova" />
+          <Input
+            name="password"
+            type="password"
+            placeholder="Insira sua nova senha"
+          />
           <Input
             name="confirmPassword"
-            type="email"
+            type="password"
             placeholder="Digite sua senha novamente"
           />
 
