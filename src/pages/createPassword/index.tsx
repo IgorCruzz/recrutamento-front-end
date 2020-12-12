@@ -63,7 +63,7 @@ const CreatePasword: React.FC = () => {
 
         <Form onSubmit={handleSubmit} ref={formRef}>
           <Input name="email" type="email" placeholder="Digite seu e-mail" />
-          <Input name="email" type="password" placeholder="Insira a senha" />
+          <Input name="password" type="password" placeholder="Insira a senha" />
           <Input
             name="confirmPassword"
             type="password"
@@ -71,7 +71,7 @@ const CreatePasword: React.FC = () => {
           />
 
           <button type="submit">
-            {loading ? 'Carregando...' : 'Redefinir senha'}
+            {loading ? 'Carregando...' : 'Criar senha'}
           </button>
         </Form>
       </Content>
