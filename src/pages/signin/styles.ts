@@ -19,7 +19,7 @@ const opacityAnimation = keyframes`
 `
 
 export const Aside = styled.div`
-  @media (max-width: 900px) {
+  @media (max-width: 1000px) {
     display: none;
   }
   width: 60%;
@@ -36,6 +36,10 @@ export const Aside = styled.div`
 `
 
 export const SignIn = styled.div`
+  @media (max-width: 1000px) {
+    width: 80%;
+  }
+
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -100,6 +104,10 @@ export const SignIn = styled.div`
 `
 
 export const Content = styled.div`
+  @media (max-width: 500px) {
+    width: 80%;
+  }
+
   animation: 1s ${opacityAnimation} ease-out;
   display: flex;
   flex-direction: row;

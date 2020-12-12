@@ -109,6 +109,6 @@ export const Title = styled.div`
 `
 export const Message = styled.span`
   color: #a9a9a9;
-
+  font-size: 1.5rem;
   text-align: center;
 `
