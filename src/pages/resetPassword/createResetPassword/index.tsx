@@ -14,6 +14,7 @@ import {
   ICreateResetPasswordState,
 } from '../../../store/ducks/repositories/resetPassword/types'
 import { Helmet } from 'react-helmet'
+import Button from '@material-ui/core/Button'
 
 const CreateResetPasword: React.FC = () => {
   const formRef = useRef<FormHandles>(null)
@@ -60,9 +61,9 @@ const CreateResetPasword: React.FC = () => {
               ATENÇÃO: enviaremos um e-mail com um link para você redefinir a
               sua senha.
             </Message>
-            <button type="submit">
+            <Button variant="outlined" type="submit" color="primary">
               {loading ? 'Carregando...' : 'Enviar código de redefinição'}
-            </button>
+            </Button>
           </Form>
         </Content>
       </Container>

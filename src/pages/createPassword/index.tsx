@@ -14,6 +14,7 @@ import {
   ICreatePasswordState,
 } from '../../store/ducks/repositories/createPassword/types'
 import { Helmet } from 'react-helmet'
+import Button from '@material-ui/core/Button'
 
 const CreatePasword: React.FC = () => {
   const formRef = useRef<FormHandles>(null)
@@ -78,10 +79,10 @@ const CreatePasword: React.FC = () => {
               type="password"
               placeholder="Digite sua senha novamente"
             />
-
-            <button type="submit">
+            <Button variant="outlined" type="submit" color="primary">
               {loading ? 'Carregando...' : 'Criar senha'}
-            </button>
+            </Button>
+            <button type="submit"></button>
           </Form>
         </Content>
       </Container>

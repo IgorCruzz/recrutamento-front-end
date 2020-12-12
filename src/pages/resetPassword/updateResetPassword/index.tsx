@@ -14,6 +14,7 @@ import {
   IUpdateResetPasswordState,
 } from '../../../store/ducks/repositories/updateResetPassword/types'
 import { Helmet } from 'react-helmet'
+import Button from '@material-ui/core/Button'
 
 const UpdateResetPasword: React.FC = () => {
   const formRef = useRef<FormHandles>(null)
@@ -78,10 +79,9 @@ const UpdateResetPasword: React.FC = () => {
               type="password"
               placeholder="Digite sua senha novamente"
             />
-
-            <button type="submit">
+            <Button variant="outlined" type="submit" color="primary">
               {loading ? 'Carregando...' : 'Redefinir senha'}
-            </button>
+            </Button>
           </Form>
         </Content>
       </Container>

@@ -14,6 +14,7 @@ import {
   IUserState,
 } from '../../store/ducks/repositories/user/types'
 import { Helmet } from 'react-helmet'
+import Button from '@material-ui/core/Button'
 
 const SignUp: React.FC = () => {
   const formRef = useRef<FormHandles>(null)
@@ -62,9 +63,9 @@ const SignUp: React.FC = () => {
               ATENÇÃO: enviaremos um e-mail com um link para você criar a sua
               senha.
             </Message>
-            <button type="submit">
+            <Button variant="outlined" type="submit" color="primary">
               {loading ? 'Carregando...' : 'Cadastrar'}
-            </button>
+            </Button>
           </Form>
         </Content>
       </Container>

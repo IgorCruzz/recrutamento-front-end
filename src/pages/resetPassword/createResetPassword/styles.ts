@@ -55,18 +55,18 @@ export const Content = styled.div`
     }
 
     button {
+      font-size: 1.5rem;
       margin-top: 20px;
-      height: 50px;
+      height: 40px;
       width: 100%;
       border-radius: 25px;
       border: 0;
       font-weight: bold;
       text-align: center;
       color: #ffffff;
-      background: #3f3071;
-
+      background: #3846bc;
       &:hover {
-        background: ${darken(0.1, '#3F3071')};
+        background: rgba(56, 70, 188, 0.47);
       }
     }
   }

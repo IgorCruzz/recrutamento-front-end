@@ -15,6 +15,7 @@ import { Validator } from '../../shared/ValidationError'
 import { MdPersonOutline } from 'react-icons/md'
 import rocket from '../../assets/rocket.svg'
 import { Helmet } from 'react-helmet'
+import Button from '@material-ui/core/Button'
 
 const Signin: React.FC = () => {
   const formRef = useRef<FormHandles>(null)
@@ -57,9 +58,9 @@ const Signin: React.FC = () => {
 
               <Input name="password" type="password" placeholder="Senha" />
 
-              <button type="submit">
+              <Button variant="outlined" type="submit" color="primary">
                 {loading ? 'Carregando...' : 'Entrar'}
-              </button>
+              </Button>
             </Form>
 
             <p>
