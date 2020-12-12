@@ -8,21 +8,21 @@ import { Input } from '../../components/input'
 import * as Yup from 'yup'
 import { AiOutlineArrowLeft } from 'react-icons/ai'
 import { Validator } from '../../shared/ValidationError'
-import { updateResetPasswordRequest } from '../../store/ducks/repositories/updateResetPassword/actions'
+import { createPasswordRequest } from '../../store/ducks/repositories/createPassword/actions'
 import {
-  IUpdateResetPassword,
-  IUpdateResetPasswordState,
-} from '../../store/ducks/repositories/updateResetPassword/types'
+  ICreatePassword,
+  ICreatePasswordState,
+} from '../../store/ducks/repositories/createPassword/types'
 
 const CreatePasword: React.FC = () => {
   const formRef = useRef<FormHandles>(null)
   const loading = useSelector(
-    (state: IUpdateResetPasswordState) => state.updateResetPassword.loading
+    (state: ICreatePasswordState) => state.createPassword.loading
   )
-  const params: { token: string } = useParams()
+  const params: { code: string } = useParams()
   const dispatch = useDispatch()
 
-  const handleSubmit = async (data: IUpdateResetPassword) => {
+  const handleSubmit = async (data: ICreatePassword) => {
     try {
       const schema = Yup.object().shape({
         email: Yup.string()
@@ -37,8 +37,8 @@ const CreatePasword: React.FC = () => {
       await schema.validate(data, { abortEarly: false })
 
       dispatch(
-        updateResetPasswordRequest({
-          token: params.token,
+        createPasswordRequest({
+          code: params.code,
           confirmPassword: data.confirmPassword,
           password: data.password,
           email: data.email,
