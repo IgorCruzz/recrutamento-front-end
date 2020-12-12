@@ -19,7 +19,7 @@ export default function RouteWrapper({
   isPrivate = false,
   ...rest
 }: Props) {
-  const signed = false // useSelector((state: ILoginState) => state.signIn.signed)
+  const signed = useSelector((state: ILoginState) => state.signIn.signed)
 
   if (signed && !isPrivate) {
     return <Redirect to="/dashboard" />
