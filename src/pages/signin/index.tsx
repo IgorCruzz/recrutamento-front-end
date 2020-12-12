@@ -11,7 +11,7 @@ import {
   ILogin,
   ILoginState,
 } from '../../store/ducks/repositories/signin/types'
-import { Validator } from '../../utils/ValidationError'
+import { Validator } from '../../shared/ValidationError'
 
 const Signin: React.FC = () => {
   const formRef = useRef<FormHandles>(null)
