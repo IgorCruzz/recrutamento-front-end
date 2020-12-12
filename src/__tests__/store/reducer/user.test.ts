@@ -1,11 +1,7 @@
 import {
-  userDelete,
   userCreateFailure,
   userCreateRequest,
   userCreateSuccess,
-  userUpdateFailure,
-  userUpdateRequest,
-  userUpdateSuccess,
 } from '../../../store/ducks/repositories/user/actions'
 import {
   signInSuccess,
@@ -21,10 +17,7 @@ describe('User', () => {
     const state = user(
       INITIAL_VALUES,
       userCreateRequest({
-        name: 'username',
         email: 'user@email',
-        password: 'password',
-        confirmPassword: 'password',
       })
     )
 
@@ -39,36 +32,6 @@ describe('User', () => {
 
   it('userCreateFailure', () => {
     const state = user(INITIAL_VALUES, userCreateFailure())
-
-    expect(state).toStrictEqual({ loading: false, profile: [] })
-  })
-
-  it('userUpdateRequest', () => {
-    const state = user(
-      INITIAL_VALUES,
-      userUpdateRequest({
-        id: 1,
-        name: 'username',
-      })
-    )
-
-    expect(state).toStrictEqual({ loading: true, profile: [] })
-  })
-
-  it('userUpdateSuccess', () => {
-    const state = user(INITIAL_VALUES, userUpdateSuccess())
-
-    expect(state).toStrictEqual({ loading: false, profile: [] })
-  })
-
-  it('userUpdateFailure', () => {
-    const state = user(INITIAL_VALUES, userUpdateFailure())
-
-    expect(state).toStrictEqual({ loading: false, profile: [] })
-  })
-
-  it('userDelete', () => {
-    const state = user(INITIAL_VALUES, userDelete({ id: 1 }))
 
     expect(state).toStrictEqual({ loading: false, profile: [] })
   })

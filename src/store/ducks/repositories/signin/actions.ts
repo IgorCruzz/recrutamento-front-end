@@ -15,7 +15,7 @@ export const signInFailure = () => {
 
 export const signInSuccess = (
   token: string,
-  user: { id: number; name: string; email: string }
+  user: { id: number; email: string }
 ) => {
   return {
     type: RepositoriesTypes.SIGNIN_SUCCESS,

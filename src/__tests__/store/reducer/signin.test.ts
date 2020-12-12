@@ -9,8 +9,6 @@ import {
   signOut,
 } from '../../../store/ducks/repositories/signin/actions'
 
-import { userDelete } from '../../../store/ducks/repositories/user/actions'
-
 describe('SignIN', () => {
   it('signInRequest', () => {
     const signinData = {
@@ -49,12 +47,6 @@ describe('SignIN', () => {
 
   it('signOut', () => {
     const state = signIn(INITIAL_VALUES, signOut())
-
-    expect(state).toStrictEqual({ loading: false, signed: false, token: null })
-  })
-
-  it('userDelete', () => {
-    const state = signIn(INITIAL_VALUES, userDelete({ id: 1 }))
 
     expect(state).toStrictEqual({ loading: false, signed: false, token: null })
   })

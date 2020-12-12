@@ -30,22 +30,6 @@ export function user(state = INITIAL_VALUES, action: any) {
         draft.loading = false
         break
       }
-      case RepositoriesTypes.USER_UPDATE_REQUEST: {
-        draft.loading = true
-        break
-      }
-      case RepositoriesTypes.USER_UPDATE_FAILURE: {
-        draft.loading = false
-        break
-      }
-      case RepositoriesTypes.USER_UPDATE_SUCESS: {
-        draft.loading = false
-        break
-      }
-      case RepositoriesTypes.USER_DELETE: {
-        draft.profile = []
-        break
-      }
       default:
     }
   })

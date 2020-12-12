@@ -1,6 +1,5 @@
 import produce from 'immer'
 import { RepositoriesTypes } from './types'
-import { RepositoriesTypes as RepositoriesTypesUser } from '../user/types'
 
 export const INITIAL_VALUES = {
   signed: false,
@@ -26,11 +25,6 @@ export function signIn(state = INITIAL_VALUES, action: any) {
         break
       }
       case RepositoriesTypes.SIGNOUT: {
-        draft.signed = false
-        draft.token = null
-        break
-      }
-      case RepositoriesTypesUser.USER_DELETE: {
         draft.signed = false
         draft.token = null
         break

@@ -34,7 +34,6 @@ describe('SignIn', () => {
     expect(dispatch).toHaveBeenCalledWith(
       signInSuccess('token', {
         id: 1,
-        name: 'username',
         email: 'user@gmail.com',
       })
     )
