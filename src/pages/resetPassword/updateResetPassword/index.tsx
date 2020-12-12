@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react'
 import { Form } from '@unform/web'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { FormHandles } from '@unform/core'
 import { Container, Content, Title } from './styles'
@@ -17,11 +17,8 @@ import {
 const UpdateResetPasword: React.FC = () => {
   const formRef = useRef<FormHandles>(null)
   const loading = useSelector((state: IUserState) => state.user.loading)
+  const params: { token: string } = useParams()
   const dispatch = useDispatch()
-
-  useEffect(() => {
-    alert('OLÁ')
-  }, [])
 
   const handleSubmit = async (data: IUserCreate) => {
     try {
