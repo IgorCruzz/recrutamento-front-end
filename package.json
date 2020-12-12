@@ -32,6 +32,7 @@
     "babel-polyfill": "^6.26.0",
     "coveralls": "^3.1.0",
     "dotenv": "^8.2.0",
+    "git-commit-msg-linter": "^3.0.0",
     "history": "^5.0.0",
     "polished": "^3.6.5",
     "react": "^16.13.1",
