@@ -7,8 +7,8 @@ export enum RepositoriesTypes {
 export interface IUpdateResetPassword {
   token: string
   email: string
-  password: 'string'
-  confirmPassword: 'string'
+  password: string
+  confirmPassword: string
 }
 
 export interface IUpdateesetPasswordState {
