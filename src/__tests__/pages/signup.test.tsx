@@ -26,7 +26,7 @@ describe('Signup', () => {
 
     render(<SignUp />)
 
-    fireEvent.input(screen.getByPlaceholderText('E-mail'), {
+    fireEvent.input(screen.getByPlaceholderText('Digite seu melhor e-mail'), {
       target: { value: 'user@gmail.com' },
     })
 
@@ -44,7 +44,7 @@ describe('Signup', () => {
 
     render(<SignUp />)
 
-    fireEvent.input(screen.getByPlaceholderText('E-mail'), {
+    fireEvent.input(screen.getByPlaceholderText('Digite seu melhor e-mail'), {
       target: { value: '' },
     })
 
@@ -55,7 +55,7 @@ describe('Signup', () => {
     })
   })
 
-  it('display "carregando.." if the user has been clicked on the submit button', () => {
+  it('display "carregando.." if the user has been clicked on the submit button.', () => {
     jest.spyOn(redux, 'useSelector').mockImplementation((cb) =>
       cb({
         user: {

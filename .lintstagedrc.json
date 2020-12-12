@@ -1,6 +1,6 @@
 {
   "*.{ts,tsx}": [
     "eslint \"src/**/**/*.{tsx,ts}\" --fix",
-    "npm run test"
+    "yarn test:ci"
   ]
 }
