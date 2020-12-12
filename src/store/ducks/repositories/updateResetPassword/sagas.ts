@@ -22,6 +22,8 @@ export function* updateResetPassword(action: any) {
     yield put(updateResetPasswordSuccess())
 
     toast.success(message)
+
+    window.location.href = '/'
   } catch (e) {
     yield put(updateResetPasswordFailure())
     toast.error(e.response.data.error)
