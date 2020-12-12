@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useEffect } from 'react'
 import { Form } from '@unform/web'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
@@ -18,6 +18,10 @@ const UpdateResetPasword: React.FC = () => {
   const formRef = useRef<FormHandles>(null)
   const loading = useSelector((state: IUserState) => state.user.loading)
   const dispatch = useDispatch()
+
+  useEffect(() => {
+    alert('OLÁ')
+  }, [])
 
   const handleSubmit = async (data: IUserCreate) => {
     try {
