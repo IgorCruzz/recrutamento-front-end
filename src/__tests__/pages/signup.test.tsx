@@ -19,27 +19,15 @@ describe('Signup', () => {
     expect(render(<SignUp />)).toBeTruthy()
   })
 
-  it('should be able to register', async () => {
+  it('should be able to create an account', async () => {
     const dispatch = jest.fn()
 
     jest.spyOn(redux, 'useDispatch').mockReturnValue(dispatch)
 
     render(<SignUp />)
 
-    fireEvent.input(screen.getByPlaceholderText('Nome'), {
-      target: { value: 'username' },
-    })
-
     fireEvent.input(screen.getByPlaceholderText('E-mail'), {
       target: { value: 'user@gmail.com' },
-    })
-
-    fireEvent.input(screen.getByPlaceholderText('Senha'), {
-      target: { value: 'password' },
-    })
-
-    fireEvent.input(screen.getByPlaceholderText('Confirmar Senha'), {
-      target: { value: 'password' },
     })
 
     fireEvent.click(screen.getByRole('button', { name: 'Cadastrar' }))
