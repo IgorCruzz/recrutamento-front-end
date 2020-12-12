@@ -62,7 +62,7 @@ const Signin: React.FC = () => {
           </p>
 
           <p>
-            <Link to="/signup">Esqueci minha senha</Link>
+            <Link to="/resetPassword">Esqueci minha senha</Link>
           </p>
         </SignIn>
       </Content>

@@ -3,7 +3,7 @@ import { Form } from '@unform/web'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { FormHandles } from '@unform/core'
-import { Container, Content, Title, Message } from './styles'
+import { Container, Content, Title } from './styles'
 import { Input } from '../../../components/input'
 import * as Yup from 'yup'
 import { AiOutlineArrowLeft } from 'react-icons/ai'
@@ -14,7 +14,7 @@ import {
   IUserState,
 } from '../../../store/ducks/repositories/user/types'
 
-const CreateResetPasword: React.FC = () => {
+const UpdateResetPasword: React.FC = () => {
   const formRef = useRef<FormHandles>(null)
   const loading = useSelector((state: IUserState) => state.user.loading)
   const dispatch = useDispatch()
@@ -49,12 +49,15 @@ const CreateResetPasword: React.FC = () => {
 
         <Form onSubmit={handleSubmit} ref={formRef}>
           <Input name="email" type="email" placeholder="Digite seu e-mail" />
-          <Message>
-            ATENÇÃO: enviaremos um e-mail com um link para você redefinir a sua
-            senha.
-          </Message>
+          <Input name="email" type="password" placeholder="Insira sua nova" />
+          <Input
+            name="confirmPassword"
+            type="email"
+            placeholder="Digite sua senha novamente"
+          />
+
           <button type="submit">
-            {loading ? 'Carregando...' : 'Enviar código de redefinição'}
+            {loading ? 'Carregando...' : 'Redefinir senha'}
           </button>
         </Form>
       </Content>
@@ -62,4 +65,4 @@ const CreateResetPasword: React.FC = () => {
   )
 }
 
-export default CreateResetPasword
+export default UpdateResetPasword
