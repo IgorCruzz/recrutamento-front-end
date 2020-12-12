@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { darken } from 'polished'
 
 export const Container = styled.div`
@@ -9,12 +9,24 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
 `
+const opacityAnimation = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`
 
 export const Content = styled.div`
+  animation: 1s ${opacityAnimation} ease-out;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background: rgba(12, 20, 36, 0.85);
+  padding: 30px;
+  border-radius: 15px;
 
   h1 {
     color: #ffffff;
@@ -62,10 +74,10 @@ export const Content = styled.div`
 
     a {
       text-decoration: none;
-      color: #1b0f40;
+      color: #3ca5bc;
 
       &:hover {
-        color: ${darken(0.1, '#1B0F40')};
+        color: ${darken(0.1, '#3CA5BC')};
       }
     }
   }

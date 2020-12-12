@@ -24,7 +24,7 @@ describe('SignIN', () => {
   it('signInSuccess', () => {
     const signinData = {
       token: 'token',
-      user: { id: 1, name: 'username', email: 'user@email.com' },
+      user: { id: 1, email: 'user@email.com' },
     }
 
     const state = signIn(

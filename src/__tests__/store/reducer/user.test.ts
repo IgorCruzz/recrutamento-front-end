@@ -41,7 +41,6 @@ describe('User', () => {
       token: 'token',
       user: {
         id: 1,
-        name: 'username',
         email: 'user@email.com',
       },
     }
@@ -52,7 +51,7 @@ describe('User', () => {
 
     expect(state).toStrictEqual({
       loading: false,
-      profile: { id: 1, email: 'user@email.com', name: 'username' },
+      profile: { id: 1, email: 'user@email.com' },
     })
   })
 

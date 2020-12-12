@@ -24,7 +24,10 @@ describe('User', () => {
       writable: true,
     })
 
-    apiMock.onPost('users').reply(201)
+    apiMock.onPost('user').reply(201, {
+      id: 1,
+      email: 'user@email.com',
+    })
 
     await runSaga({ dispatch }, createUser, {
       payload: {
@@ -41,7 +44,7 @@ describe('User', () => {
     try {
       const dispatch = jest.fn()
 
-      apiMock.onPost('users').reply(400, { error: 'error message' })
+      apiMock.onPost('user').reply(400, { error: 'error message' })
 
       await runSaga({ dispatch }, createUser, {
         payload: {

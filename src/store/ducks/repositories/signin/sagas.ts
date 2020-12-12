@@ -7,7 +7,7 @@ import { toast } from 'react-toastify'
 export function* signIn(action: any) {
   try {
     const response = yield call(api.post, 'signin', action.payload.data)
-    console.log(response)
+
     const { token, ...user } = response.data
 
     api.defaults.headers.Authorization = `Bearer ${token}`

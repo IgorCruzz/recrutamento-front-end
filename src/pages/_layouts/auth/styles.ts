@@ -1,5 +1,8 @@
 import styled from 'styled-components'
+import banner from '../../../assets/background.jpg'
 
 export const Wrapper = styled.div`
-  background: #7159c1;
+  background: url(${banner});
+  background-repeat: no-repeat;
+  background-size: cover;
 `

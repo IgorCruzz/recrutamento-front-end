@@ -3,7 +3,7 @@ import { Form } from '@unform/web'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { FormHandles } from '@unform/core'
-import { Container, Content, Title } from './styles'
+import { Container, Content, Title, Message } from './styles'
 import { Input } from '../../components/input'
 import * as Yup from 'yup'
 import { Validator } from '../../utils/ValidationError'
@@ -49,6 +49,10 @@ const SignUp: React.FC = () => {
 
         <Form onSubmit={handleSubmit} ref={formRef}>
           <Input name="email" type="email" placeholder="E-mail" />
+          <Message>
+            ATENÇÃO: enviaremos um e-mail com um link para você criar a sua
+            senha.
+          </Message>
           <button type="submit">
             {loading ? 'Carregando...' : 'Cadastrar'}
           </button>

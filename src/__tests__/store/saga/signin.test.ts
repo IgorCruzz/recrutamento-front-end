@@ -15,10 +15,9 @@ describe('SignIn', () => {
   it('signIn', async () => {
     const dispatch = jest.fn()
 
-    apiMock.onPost('session').reply(201, {
+    apiMock.onPost('signin').reply(201, {
       token: 'token',
       id: 1,
-      name: 'username',
       email: 'user@gmail.com',
     })
 
@@ -43,7 +42,7 @@ describe('SignIn', () => {
     try {
       const dispatch = jest.fn()
 
-      apiMock.onPost('session').reply(401, {
+      apiMock.onPost('signin').reply(401, {
         error: 'error message',
       })
 
@@ -58,7 +57,7 @@ describe('SignIn', () => {
     } catch (err) {
       const toastMock = jest.spyOn(toast, 'error')
 
-      expect(toastMock).toHaveBeenCalledWith(err.response.data.error)
+      expect(toastMock).toHaveBeenCalled()
     }
   })
 

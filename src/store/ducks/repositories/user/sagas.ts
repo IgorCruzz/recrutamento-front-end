@@ -7,7 +7,7 @@ import { toast } from 'react-toastify'
 
 export function* createUser(action: any) {
   try {
-    yield call(api.post, 'signup', action.payload.data)
+    yield call(api.post, 'user', action.payload.data)
 
     yield put(userCreateSuccess())
 
