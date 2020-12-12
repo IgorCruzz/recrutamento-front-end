@@ -11,11 +11,17 @@ export function* updateResetPassword(action: any) {
   try {
     const { token } = action.payload.data
 
-    yield call(api.put, `resetPassword/${token}`, action.payload.data)
+    const res = yield call(
+      api.put,
+      `resetPassword/${token}`,
+      action.payload.data
+    )
+
+    const { message } = res.data
 
     yield put(updateResetPasswordSuccess())
 
-    toast.success('Senha atualizada com sucesso!')
+    toast.success(message)
   } catch (e) {
     yield put(updateResetPasswordFailure())
     toast.error(e.response.data.error)
