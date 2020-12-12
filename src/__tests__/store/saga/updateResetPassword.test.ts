@@ -57,7 +57,7 @@ describe('UpdateResetPassword', () => {
         writable: true,
       })
 
-      apiMock.onPut('/resetPassword/token').reply(401, {
+      apiMock.onPut('/resetPassword/token').reply(400, {
         error: 'error message',
       })
 
