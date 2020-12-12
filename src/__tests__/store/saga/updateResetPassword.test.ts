@@ -16,6 +16,15 @@ describe('UpdateResetPassword', () => {
     const dispatch = jest.fn()
     const toastMock = jest.spyOn(toast, 'success')
 
+    global.window = Object.create(window)
+    const url = 'http://localhost'
+    Object.defineProperty(window, 'location', {
+      value: {
+        href: url,
+      },
+      writable: true,
+    })
+
     apiMock.onPut('/resetPassword/token').reply(201, {
       message: 'Senha atualizada com sucesso!',
     })
@@ -38,6 +47,15 @@ describe('UpdateResetPassword', () => {
   it('updateResetPassword -> throw an error if any has wrong', async () => {
     try {
       const dispatch = jest.fn()
+
+      global.window = Object.create(window)
+      const url = 'http://localhost'
+      Object.defineProperty(window, 'location', {
+        value: {
+          href: url,
+        },
+        writable: true,
+      })
 
       apiMock.onPut('/resetPassword/token').reply(401, {
         error: 'error message',
