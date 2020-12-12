@@ -13,6 +13,7 @@ import {
   IUpdateResetPassword,
   IUpdateResetPasswordState,
 } from '../../../store/ducks/repositories/updateResetPassword/types'
+import { Helmet } from 'react-helmet'
 
 const UpdateResetPasword: React.FC = () => {
   const formRef = useRef<FormHandles>(null)
@@ -52,34 +53,39 @@ const UpdateResetPasword: React.FC = () => {
   }
 
   return (
-    <Container>
-      <Content>
-        <Title>
-          <h1>Redefinição de senha</h1>
-          <Link to="/">
-            <AiOutlineArrowLeft /> Voltar para tela de login
-          </Link>
-        </Title>
+    <>
+      <Helmet>
+        <title>Redefinição de senha</title>
+      </Helmet>
+      <Container>
+        <Content>
+          <Title>
+            <h1>Redefinição de senha</h1>
+            <Link to="/">
+              <AiOutlineArrowLeft /> Voltar para tela de login
+            </Link>
+          </Title>
 
-        <Form onSubmit={handleSubmit} ref={formRef}>
-          <Input name="email" type="email" placeholder="Digite seu e-mail" />
-          <Input
-            name="password"
-            type="password"
-            placeholder="Insira sua nova senha"
-          />
-          <Input
-            name="confirmPassword"
-            type="password"
-            placeholder="Digite sua senha novamente"
-          />
+          <Form onSubmit={handleSubmit} ref={formRef}>
+            <Input name="email" type="email" placeholder="Digite seu e-mail" />
+            <Input
+              name="password"
+              type="password"
+              placeholder="Insira sua nova senha"
+            />
+            <Input
+              name="confirmPassword"
+              type="password"
+              placeholder="Digite sua senha novamente"
+            />
 
-          <button type="submit">
-            {loading ? 'Carregando...' : 'Redefinir senha'}
-          </button>
-        </Form>
-      </Content>
-    </Container>
+            <button type="submit">
+              {loading ? 'Carregando...' : 'Redefinir senha'}
+            </button>
+          </Form>
+        </Content>
+      </Container>
+    </>
   )
 }
 

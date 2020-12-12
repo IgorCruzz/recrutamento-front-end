@@ -13,6 +13,7 @@ import {
   IUserCreate,
   IUserState,
 } from '../../store/ducks/repositories/user/types'
+import { Helmet } from 'react-helmet'
 
 const SignUp: React.FC = () => {
   const formRef = useRef<FormHandles>(null)
@@ -38,31 +39,36 @@ const SignUp: React.FC = () => {
   }
 
   return (
-    <Container>
-      <Content>
-        <Title>
-          <h1>Cadastro</h1>
-          <Link to="/">
-            <AiOutlineArrowLeft /> Voltar para tela de login
-          </Link>
-        </Title>
+    <>
+      <Helmet>
+        <title>Cadastro</title>
+      </Helmet>
+      <Container>
+        <Content>
+          <Title>
+            <h1>Cadastro</h1>
+            <Link to="/">
+              <AiOutlineArrowLeft /> Voltar para tela de login
+            </Link>
+          </Title>
 
-        <Form onSubmit={handleSubmit} ref={formRef}>
-          <Input
-            name="email"
-            type="email"
-            placeholder="Digite seu melhor e-mail"
-          />
-          <Message>
-            ATENÇÃO: enviaremos um e-mail com um link para você criar a sua
-            senha.
-          </Message>
-          <button type="submit">
-            {loading ? 'Carregando...' : 'Cadastrar'}
-          </button>
-        </Form>
-      </Content>
-    </Container>
+          <Form onSubmit={handleSubmit} ref={formRef}>
+            <Input
+              name="email"
+              type="email"
+              placeholder="Digite seu melhor e-mail"
+            />
+            <Message>
+              ATENÇÃO: enviaremos um e-mail com um link para você criar a sua
+              senha.
+            </Message>
+            <button type="submit">
+              {loading ? 'Carregando...' : 'Cadastrar'}
+            </button>
+          </Form>
+        </Content>
+      </Container>
+    </>
   )
 }
 

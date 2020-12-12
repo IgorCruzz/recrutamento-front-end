@@ -14,6 +14,7 @@ import {
 import { Validator } from '../../shared/ValidationError'
 import { MdPersonOutline } from 'react-icons/md'
 import rocket from '../../assets/rocket.svg'
+import { Helmet } from 'react-helmet'
 
 const Signin: React.FC = () => {
   const formRef = useRef<FormHandles>(null)
@@ -40,33 +41,38 @@ const Signin: React.FC = () => {
   }
 
   return (
-    <Container>
-      <Content>
-        <Aside>
-          <img src={rocket} />
-        </Aside>
-        <SignIn>
-          <MdPersonOutline />
-          <Form onSubmit={handleSubmit} ref={formRef} data-testid="form">
-            <Input name="email" type="email" placeholder="E-mail" />
+    <>
+      <Helmet>
+        <title>Login</title>
+      </Helmet>
+      <Container>
+        <Content>
+          <Aside>
+            <img src={rocket} />
+          </Aside>
+          <SignIn>
+            <MdPersonOutline />
+            <Form onSubmit={handleSubmit} ref={formRef} data-testid="form">
+              <Input name="email" type="email" placeholder="E-mail" />
 
-            <Input name="password" type="password" placeholder="Senha" />
+              <Input name="password" type="password" placeholder="Senha" />
 
-            <button type="submit">
-              {loading ? 'Carregando...' : 'Entrar'}
-            </button>
-          </Form>
+              <button type="submit">
+                {loading ? 'Carregando...' : 'Entrar'}
+              </button>
+            </Form>
 
-          <p>
-            Não possui conta? <Link to="/signup">Criar conta gratuita</Link>
-          </p>
+            <p>
+              Não possui conta? <Link to="/signup">Criar conta gratuita</Link>
+            </p>
 
-          <p>
-            <Link to="/resetPassword">Esqueci minha senha</Link>
-          </p>
-        </SignIn>
-      </Content>
-    </Container>
+            <p>
+              <Link to="/resetPassword">Esqueci minha senha</Link>
+            </p>
+          </SignIn>
+        </Content>
+      </Container>
+    </>
   )
 }
 

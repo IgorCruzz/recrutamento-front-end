@@ -13,6 +13,7 @@ import {
   ICreateResetPassword,
   ICreateResetPasswordState,
 } from '../../../store/ducks/repositories/resetPassword/types'
+import { Helmet } from 'react-helmet'
 
 const CreateResetPasword: React.FC = () => {
   const formRef = useRef<FormHandles>(null)
@@ -40,27 +41,32 @@ const CreateResetPasword: React.FC = () => {
   }
 
   return (
-    <Container>
-      <Content>
-        <Title>
-          <h1>Redefinição de senha</h1>
-          <Link to="/">
-            <AiOutlineArrowLeft /> Voltar para tela de login
-          </Link>
-        </Title>
+    <>
+      <Helmet>
+        <title>Redefinição de senha</title>
+      </Helmet>
+      <Container>
+        <Content>
+          <Title>
+            <h1>Redefinição de senha</h1>
+            <Link to="/">
+              <AiOutlineArrowLeft /> Voltar para tela de login
+            </Link>
+          </Title>
 
-        <Form onSubmit={handleSubmit} ref={formRef}>
-          <Input name="email" type="email" placeholder="Digite seu e-mail" />
-          <Message>
-            ATENÇÃO: enviaremos um e-mail com um link para você redefinir a sua
-            senha.
-          </Message>
-          <button type="submit">
-            {loading ? 'Carregando...' : 'Enviar código de redefinição'}
-          </button>
-        </Form>
-      </Content>
-    </Container>
+          <Form onSubmit={handleSubmit} ref={formRef}>
+            <Input name="email" type="email" placeholder="Digite seu e-mail" />
+            <Message>
+              ATENÇÃO: enviaremos um e-mail com um link para você redefinir a
+              sua senha.
+            </Message>
+            <button type="submit">
+              {loading ? 'Carregando...' : 'Enviar código de redefinição'}
+            </button>
+          </Form>
+        </Content>
+      </Container>
+    </>
   )
 }
 

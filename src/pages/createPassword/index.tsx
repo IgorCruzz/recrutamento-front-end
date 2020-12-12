@@ -13,6 +13,7 @@ import {
   ICreatePassword,
   ICreatePasswordState,
 } from '../../store/ducks/repositories/createPassword/types'
+import { Helmet } from 'react-helmet'
 
 const CreatePasword: React.FC = () => {
   const formRef = useRef<FormHandles>(null)
@@ -52,30 +53,39 @@ const CreatePasword: React.FC = () => {
   }
 
   return (
-    <Container>
-      <Content>
-        <Title>
-          <h1>Criar senha</h1>
-          <Link to="/">
-            <AiOutlineArrowLeft /> Voltar para tela de login
-          </Link>
-        </Title>
+    <>
+      <Helmet>
+        <title>Criar senha</title>
+      </Helmet>
+      <Container>
+        <Content>
+          <Title>
+            <h1>Criar senha</h1>
+            <Link to="/">
+              <AiOutlineArrowLeft /> Voltar para tela de login
+            </Link>
+          </Title>
 
-        <Form onSubmit={handleSubmit} ref={formRef}>
-          <Input name="email" type="email" placeholder="Digite seu e-mail" />
-          <Input name="password" type="password" placeholder="Insira a senha" />
-          <Input
-            name="confirmPassword"
-            type="password"
-            placeholder="Digite sua senha novamente"
-          />
+          <Form onSubmit={handleSubmit} ref={formRef}>
+            <Input name="email" type="email" placeholder="Digite seu e-mail" />
+            <Input
+              name="password"
+              type="password"
+              placeholder="Insira a senha"
+            />
+            <Input
+              name="confirmPassword"
+              type="password"
+              placeholder="Digite sua senha novamente"
+            />
 
-          <button type="submit">
-            {loading ? 'Carregando...' : 'Criar senha'}
-          </button>
-        </Form>
-      </Content>
-    </Container>
+            <button type="submit">
+              {loading ? 'Carregando...' : 'Criar senha'}
+            </button>
+          </Form>
+        </Content>
+      </Container>
+    </>
   )
 }
 
