@@ -12,9 +12,6 @@ import {
   ILoginState,
 } from '../../store/ducks/repositories/signin/types'
 import { Validator } from '../../utils/ValidationError'
-interface Errors {
-  [key: string]: string
-}
 
 const Signin: React.FC = () => {
   const formRef = useRef<FormHandles>(null)
@@ -43,8 +40,6 @@ const Signin: React.FC = () => {
   return (
     <Container>
       <Content>
-        <h1>companyHUB!!!</h1>
-
         <Form onSubmit={handleSubmit} ref={formRef} data-testid="form">
           <Input name="email" type="email" placeholder="E-mail" />
 
