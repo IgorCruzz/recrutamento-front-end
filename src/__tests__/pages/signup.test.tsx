@@ -44,19 +44,7 @@ describe('Signup', () => {
 
     render(<SignUp />)
 
-    fireEvent.input(screen.getByPlaceholderText('Nome'), {
-      target: { value: '' },
-    })
-
     fireEvent.input(screen.getByPlaceholderText('E-mail'), {
-      target: { value: '' },
-    })
-
-    fireEvent.input(screen.getByPlaceholderText('Senha'), {
-      target: { value: '' },
-    })
-
-    fireEvent.input(screen.getByPlaceholderText('Confirmar Senha'), {
       target: { value: '' },
     })
 
