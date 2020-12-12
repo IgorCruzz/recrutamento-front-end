@@ -10,6 +10,8 @@ export function* createUser(action: any) {
     yield call(api.post, 'user', action.payload.data)
 
     yield put(userCreateSuccess())
+
+    toast.success('Conta criada com sucesso!')
   } catch (e) {
     yield put(userCreateFailure())
     toast.error(e.response.data.error)

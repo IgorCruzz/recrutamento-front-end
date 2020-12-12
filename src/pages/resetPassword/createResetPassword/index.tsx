@@ -8,7 +8,7 @@ import { Input } from '../../../components/input'
 import * as Yup from 'yup'
 import { AiOutlineArrowLeft } from 'react-icons/ai'
 import { Validator } from '../../../shared/ValidationError'
-import { userCreateRequest } from '../../../store/ducks/repositories/user/actions'
+import { createResetPasswordRequest } from '../../../store/ducks/repositories/resetPassword/actions'
 import {
   ICreateResetPassword,
   ICreateResetPasswordState,
@@ -33,7 +33,7 @@ const CreateResetPasword: React.FC = () => {
 
       await schema.validate(data, { abortEarly: false })
 
-      dispatch(userCreateRequest(data))
+      dispatch(createResetPasswordRequest(data))
     } catch (err) {
       const Error = Validator(err)
 

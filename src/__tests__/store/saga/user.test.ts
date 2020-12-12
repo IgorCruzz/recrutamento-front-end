@@ -14,15 +14,7 @@ const apiMock = new MockAdapter(api)
 describe('User', () => {
   it('createUser', async () => {
     const dispatch = jest.fn()
-
-    global.window = Object.create(window)
-    const url = 'http://localhost'
-    Object.defineProperty(window, 'location', {
-      value: {
-        href: url,
-      },
-      writable: true,
-    })
+    const toastMock = jest.spyOn(toast, 'success')
 
     apiMock.onPost('user').reply(201, {
       id: 1,
@@ -38,6 +30,7 @@ describe('User', () => {
     }).toPromise()
 
     expect(dispatch).toHaveBeenCalledWith(userCreateSuccess())
+    expect(toastMock).toBeCalled()
   })
 
   it('createUser / throw an error if any has wrong', async () => {
