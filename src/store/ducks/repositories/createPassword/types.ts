@@ -5,7 +5,7 @@ export enum RepositoriesTypes {
 }
 
 export interface ICreatePassword {
-  token: string
+  code: string
   email: string
   password: string
   confirmPassword: string

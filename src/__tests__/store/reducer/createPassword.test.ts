@@ -10,8 +10,8 @@ import {
 
 describe('createPassword', () => {
   it('createPasswordRequest', () => {
-    const updateResetPasswordData = {
-      token: 'token',
+    const createPasswordData = {
+      code: 'code',
       email: 'user@email.com',
       password: 'password',
       confirmPassword: 'password',
@@ -19,7 +19,7 @@ describe('createPassword', () => {
 
     const state = createPassword(
       INITIAL_VALUES,
-      createPasswordRequest(updateResetPasswordData)
+      createPasswordRequest(createPasswordData)
     )
 
     expect(state).toStrictEqual({ loading: true })
