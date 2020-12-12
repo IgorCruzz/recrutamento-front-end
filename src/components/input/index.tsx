@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import { useField } from '@unform/core'
 import { Content, Error } from './styles'
-import { FiAlertTriangle } from 'react-icons/fi'
 
 interface Props {
   name: string
@@ -29,12 +28,7 @@ export const Input: React.FC<InputProps> = ({ name, ...rest }: Props) => {
         defaultValue={defaultValue}
         {...rest}
       />
-      {error && (
-        <Error data-testid="error">
-          <FiAlertTriangle />
-          {error}
-        </Error>
-      )}
+      {error && <Error data-testid="error">{error}</Error>}
     </Content>
   )
 }

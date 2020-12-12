@@ -6,9 +6,9 @@ import { FormHandles } from '@unform/core'
 import { Container, Content, Title, Message } from './styles'
 import { Input } from '../../components/input'
 import * as Yup from 'yup'
-import { Validator } from '../../utils/ValidationError'
-import { userCreateRequest } from '../../store/ducks/repositories/user/actions'
 import { AiOutlineArrowLeft } from 'react-icons/ai'
+import { Validator } from '../../shared/ValidationError'
+import { userCreateRequest } from '../../store/ducks/repositories/user/actions'
 import {
   IUserCreate,
   IUserState,
@@ -48,7 +48,11 @@ const SignUp: React.FC = () => {
         </Title>
 
         <Form onSubmit={handleSubmit} ref={formRef}>
-          <Input name="email" type="email" placeholder="E-mail" />
+          <Input
+            name="email"
+            type="email"
+            placeholder="Digite seu melhor e-mail"
+          />
           <Message>
             ATENÇÃO: enviaremos um e-mail com um link para você criar a sua
             senha.

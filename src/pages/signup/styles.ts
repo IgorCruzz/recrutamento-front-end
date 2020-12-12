@@ -10,15 +10,13 @@ export const Container = styled.div`
 `
 
 const opacityAnimation = keyframes`
-  0% {
-    right:0px;
+  from {
+    opacity: 0;
   }
-  25% {
-    left:200px;
-    top:0px;
+  to {
+    opacity: 1;
   }
 `
-
 export const Content = styled.div`
   @media (max-width: 950px) {
     width: 100%;
@@ -30,9 +28,7 @@ export const Content = styled.div`
   padding: 25px;
   display: flex;
   width: 70%;
-  animation-name: ${opacityAnimation};
-  animation-duration: 4s;
-  animation-iteration-count: 3;
+  animation: 1s ${opacityAnimation} ease-out;
   justify-content: space-between;
   margin: 30px;
 
@@ -50,7 +46,7 @@ export const Content = styled.div`
       padding-left: 15px;
       height: 50px;
       width: 100%;
-
+      font-size: 1.5rem;
       :focus {
         border: #3f3071 3px solid;
       }
@@ -112,7 +108,7 @@ export const Title = styled.div`
   }
 `
 export const Message = styled.span`
-  color: #ffffff;
+  color: #a9a9a9;
 
   text-align: center;
 `

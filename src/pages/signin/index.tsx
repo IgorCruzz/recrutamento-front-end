@@ -3,7 +3,7 @@ import { Form } from '@unform/web'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { FormHandles } from '@unform/core'
-import { Container, Content } from './styles'
+import { Container, Content, Aside, SignIn } from './styles'
 import { Input } from '../../components/input'
 import * as Yup from 'yup'
 import { signInRequest } from '../../store/ducks/repositories/signin/actions'
@@ -12,6 +12,8 @@ import {
   ILoginState,
 } from '../../store/ducks/repositories/signin/types'
 import { Validator } from '../../shared/ValidationError'
+import { MdPersonOutline } from 'react-icons/md'
+import rocket from '../../assets/rocket.svg'
 
 const Signin: React.FC = () => {
   const formRef = useRef<FormHandles>(null)
@@ -40,17 +42,29 @@ const Signin: React.FC = () => {
   return (
     <Container>
       <Content>
-        <Form onSubmit={handleSubmit} ref={formRef} data-testid="form">
-          <Input name="email" type="email" placeholder="E-mail" />
+        <Aside>
+          <img src={rocket} />
+        </Aside>
+        <SignIn>
+          <MdPersonOutline />
+          <Form onSubmit={handleSubmit} ref={formRef} data-testid="form">
+            <Input name="email" type="email" placeholder="E-mail" />
 
-          <Input name="password" type="password" placeholder="Senha" />
+            <Input name="password" type="password" placeholder="Senha" />
 
-          <button type="submit">{loading ? 'Carregando...' : 'Entrar'}</button>
-        </Form>
+            <button type="submit">
+              {loading ? 'Carregando...' : 'Entrar'}
+            </button>
+          </Form>
 
-        <p>
-          Não possui conta? <Link to="/signup">Criar conta gratuita</Link>
-        </p>
+          <p>
+            Não possui conta? <Link to="/signup">Criar conta gratuita</Link>
+          </p>
+
+          <p>
+            <Link to="/signup">Esqueci minha senha</Link>
+          </p>
+        </SignIn>
       </Content>
     </Container>
   )

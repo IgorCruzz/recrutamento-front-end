@@ -6,7 +6,7 @@ import { Provider } from 'react-redux'
 import './config/ReactotronConfig'
 import Routes from './routes'
 import { store, persistor } from './store'
-import GlobalStyle from './styles/global'
+import GlobalStyle from '../src/shared/styles/global'
 
 function App() {
   return (
