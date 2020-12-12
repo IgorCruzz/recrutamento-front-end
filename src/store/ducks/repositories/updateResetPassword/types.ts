@@ -11,7 +11,7 @@ export interface IUpdateResetPassword {
   confirmPassword: string
 }
 
-export interface IUpdateesetPasswordState {
+export interface IUpdateResetPasswordState {
   updateResetPassword: {
     loading: boolean
   }

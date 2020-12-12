@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef } from 'react'
 import { Form } from '@unform/web'
 import { Link, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
@@ -8,29 +8,42 @@ import { Input } from '../../../components/input'
 import * as Yup from 'yup'
 import { AiOutlineArrowLeft } from 'react-icons/ai'
 import { Validator } from '../../../shared/ValidationError'
-import { userCreateRequest } from '../../../store/ducks/repositories/user/actions'
+import { updateResetPasswordRequest } from '../../../store/ducks/repositories/updateResetPassword/actions'
 import {
-  IUserCreate,
-  IUserState,
-} from '../../../store/ducks/repositories/user/types'
+  IUpdateResetPassword,
+  IUpdateResetPasswordState,
+} from '../../../store/ducks/repositories/updateResetPassword/types'
 
 const UpdateResetPasword: React.FC = () => {
   const formRef = useRef<FormHandles>(null)
-  const loading = useSelector((state: IUserState) => state.user.loading)
+  const loading = useSelector(
+    (state: IUpdateResetPasswordState) => state.updateResetPassword.loading
+  )
   const params: { token: string } = useParams()
   const dispatch = useDispatch()
 
-  const handleSubmit = async (data: IUserCreate) => {
+  const handleSubmit = async (data: IUpdateResetPassword) => {
     try {
       const schema = Yup.object().shape({
         email: Yup.string()
           .email('Insira um e-mail válido')
-          .required('Campo obrigatório'),
+          .required('Campo obrigratório'),
+        password: Yup.string().required('Campo obrigratório'),
+        confirmPassword: Yup.string()
+          .oneOf([Yup.ref('password'), 'O campo de senha não bate'])
+          .required('Campo obrigratório'),
       })
 
       await schema.validate(data, { abortEarly: false })
 
-      dispatch(userCreateRequest(data))
+      dispatch(
+        updateResetPasswordRequest({
+          token: params.token,
+          confirmPassword: data.confirmPassword,
+          password: data.password,
+          email: data.email,
+        })
+      )
     } catch (err) {
       const Error = Validator(err)
 
