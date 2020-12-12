@@ -15,7 +15,7 @@ export default function Routes() {
       <Route path="/signup" component={SignUp} />
       <Route path="/dashboard" component={Dashboard} isPrivate />
       <Route path="/resetPassword" component={CreateResetPasword} />
-      <Route path="/createPassword/:token" component={CreatePassword} />
+      <Route path="/createPassword/:code" component={CreatePassword} />
       <Route path="/updatePassword/:token" component={UpdateResetPasword} />
     </Switch>
   )
