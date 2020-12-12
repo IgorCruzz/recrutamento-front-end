@@ -1,7 +1,10 @@
 import 'babel-polyfill'
 import MockAdapter from 'axios-mock-adapter'
 import { runSaga } from 'redux-saga'
-import { createResetPasswordSuccess } from '../../../store/ducks/repositories/resetPassword/actions'
+import {
+  createResetPasswordSuccess,
+  createResetPasswordFailure,
+} from '../../../store/ducks/repositories/resetPassword/actions'
 import { createResetPassword } from '../../../store/ducks/repositories/resetPassword/sagas'
 import { api } from '../../../services/api'
 import { toast } from 'react-toastify'
@@ -33,7 +36,7 @@ describe('CreateResetPassword', () => {
     try {
       const dispatch = jest.fn()
 
-      apiMock.onPost('signin').reply(401, {
+      apiMock.onPost('/resetPassword').reply(401, {
         error: 'error message',
       })
 
@@ -46,7 +49,7 @@ describe('CreateResetPassword', () => {
       }).toPromise()
     } catch (err) {
       const toastMock = jest.spyOn(toast, 'error')
-
+      expect(createResetPasswordFailure).toHaveBeenCalled()
       expect(toastMock).toHaveBeenCalled()
     }
   })
