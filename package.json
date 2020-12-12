@@ -34,6 +34,8 @@
     "dotenv": "^8.2.0",
     "git-commit-msg-linter": "^3.0.0",
     "history": "^5.0.0",
+    "husky": "^4.3.5",
+    "lint-staged": "^10.5.3",
     "polished": "^3.6.5",
     "react": "^16.13.1",
     "react-animations": "^1.0.0",
