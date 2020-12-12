@@ -4,7 +4,6 @@ import { darken } from 'polished'
 export const Container = styled.div`
   width: 100%;
   height: 100vh;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,12 +23,10 @@ export const Aside = styled.div`
   }
   width: 60%;
   height: 100%;
-
   display: flex;
   align-items: center;
   justify-content: center;
   margin-right: 20px;
-
   img {
     width: 500px;
   }
@@ -39,24 +36,20 @@ export const SignIn = styled.div`
   @media (max-width: 1000px) {
     width: 80%;
   }
-
   display: flex;
   align-items: center;
   flex-direction: column;
   width: 50%;
-
   svg {
     width: 100px;
     height: 100px;
     color: #ffffff;
     margin-bottom: 40px;
   }
-
   form {
     width: 100%;
     display: flex;
     flex-direction: column;
-
     input {
       border-radius: 25px;
       border: 0;
@@ -69,7 +62,6 @@ export const SignIn = styled.div`
         border: #3f3071 3px solid;
       }
     }
-
     button {
       margin-top: 20px;
       height: 40px;
@@ -80,22 +72,18 @@ export const SignIn = styled.div`
       text-align: center;
       color: #ffffff;
       background: #3f3071;
-
       &:hover {
         background: ${darken(0.1, '#3F3071')};
       }
     }
   }
-
   p {
     color: #ffffff;
     margin-top: 15px;
     font-size: 1.2rem;
-
     a {
       text-decoration: none;
       color: #3ca5bc;
-
       &:hover {
         color: ${darken(0.1, '#3CA5BC')};
       }
@@ -107,7 +95,6 @@ export const Content = styled.div`
   @media (max-width: 500px) {
     width: 80%;
   }
-
   animation: 1s ${opacityAnimation} ease-out;
   display: flex;
   flex-direction: row;
@@ -118,7 +105,6 @@ export const Content = styled.div`
   border-radius: 15px;
   height: 500px;
   width: 60%;
-
   h1 {
     color: #ffffff;
     margin-bottom: 50px;
