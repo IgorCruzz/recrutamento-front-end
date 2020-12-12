@@ -10,16 +10,18 @@ import { AiOutlineArrowLeft } from 'react-icons/ai'
 import { Validator } from '../../../shared/ValidationError'
 import { userCreateRequest } from '../../../store/ducks/repositories/user/actions'
 import {
-  IUserCreate,
-  IUserState,
-} from '../../../store/ducks/repositories/user/types'
+  ICreateResetPassword,
+  ICreateResetPasswordState,
+} from '../../../store/ducks/repositories/resetPassword/types'
 
 const CreateResetPasword: React.FC = () => {
   const formRef = useRef<FormHandles>(null)
-  const loading = useSelector((state: IUserState) => state.user.loading)
+  const loading = useSelector(
+    (state: ICreateResetPasswordState) => state.createResetPassword.loading
+  )
   const dispatch = useDispatch()
 
-  const handleSubmit = async (data: IUserCreate) => {
+  const handleSubmit = async (data: ICreateResetPassword) => {
     try {
       const schema = Yup.object().shape({
         email: Yup.string()
