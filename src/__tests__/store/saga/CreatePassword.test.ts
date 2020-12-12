@@ -26,7 +26,7 @@ describe('createPassword', () => {
     })
 
     apiMock.onPut('/password/code').reply(201, {
-      message: 'Senha atualizada com sucesso!',
+      message: 'Senha criada com sucesso.',
     })
 
     await runSaga({ dispatch }, createPassword, {
@@ -57,7 +57,7 @@ describe('createPassword', () => {
         writable: true,
       })
 
-      apiMock.onPut('/resetPassword/token').reply(400, {
+      apiMock.onPut('/password/code').reply(400, {
         error: 'error message',
       })
 
