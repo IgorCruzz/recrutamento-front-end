@@ -1,6 +1,6 @@
 {
   "*.{ts,tsx}": [
-    "eslint 'src/**' --fix",
+    "eslint \"src/**/**/*.{tsx,ts}\" --fix",
     "npm run test"
   ]
 }
