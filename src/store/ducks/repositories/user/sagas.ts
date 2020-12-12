@@ -10,8 +10,6 @@ export function* createUser(action: any) {
     yield call(api.post, 'user', action.payload.data)
 
     yield put(userCreateSuccess())
-
-    window.location.href = '/message'
   } catch (e) {
     yield put(userCreateFailure())
     toast.error(e.response.data.error)
