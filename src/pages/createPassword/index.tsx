@@ -82,7 +82,6 @@ const CreatePasword: React.FC = () => {
             <Button variant="outlined" type="submit" color="primary">
               {loading ? 'Carregando...' : 'Criar senha'}
             </Button>
-            <button type="submit"></button>
           </Form>
         </Content>
       </Container>
