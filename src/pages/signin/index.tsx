@@ -49,7 +49,7 @@ const Signin: React.FC = () => {
       <Container>
         <Content>
           <Aside>
-            <img src={rocket} />
+            <img src={rocket} alt="rocket" />
           </Aside>
           <SignIn>
             <MdPersonOutline />

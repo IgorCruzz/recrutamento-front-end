@@ -3,7 +3,6 @@ import { BsCloudFill } from 'react-icons/bs'
 import { Container, Logo, Main, SearchInput, Logout } from './styles'
 import { Link } from 'react-router-dom'
 import { GoDashboard } from 'react-icons/go'
-import { AiOutlineSearch } from 'react-icons/ai'
 import { BiExit } from 'react-icons/bi'
 const VerticalMenu: React.FC = () => {
   return (
@@ -23,9 +22,6 @@ const VerticalMenu: React.FC = () => {
       <div>
         <SearchInput>
           <input type="search" placeholder="Procurar servidor..." />
-          <button type="button">
-            <AiOutlineSearch />
-          </button>
         </SearchInput>
 
         <Logout>

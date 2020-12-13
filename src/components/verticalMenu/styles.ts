@@ -18,6 +18,7 @@ export const Logo = styled.div`
   width: 100%;
   padding-bottom: 15px;
   border-bottom: 0.3px solid #4f4f4f;
+  font-size: 3.5rem;
 `
 
 export const Main = styled.div`
@@ -40,7 +41,7 @@ export const Main = styled.div`
     }
     text-decoration: none;
     color: #ffffff;
-    font-size: 1rem;
+    font-size: 2rem;
   }
 `
 export const SearchInput = styled.div`
@@ -52,11 +53,11 @@ export const SearchInput = styled.div`
   input {
     margin-bottom: 20px;
     background: #363636;
-    width: 80%;
-    height: 20px;
+    width: 90%;
+    height: 40px;
     border-radius: 20px;
     border: 0;
-    padding-left: 5px;
+    padding-left: 15px;
     font-size: 1rem;
     padding-right: 25px;
     color: #ffffff;
@@ -74,20 +75,7 @@ export const SearchInput = styled.div`
     }
 
     ::placeholder {
-      font-size: 1rem;
-    }
-  }
-  button {
-    border: 0;
-    background: none;
-    color: #ffffff;
-    width: 20%;
-    position: absolute;
-    top: 1px;
-    right: 15px;
-
-    svg {
-      color: #202020;
+      font-size: 1.5rem;
     }
   }
 `
@@ -104,7 +92,7 @@ export const Logout = styled.div`
     background: none;
     color: #ffffff;
     border: 0;
-    font-size: 2rem;
+    font-size: 4rem;
 
     &:hover {
       background: #363636;
