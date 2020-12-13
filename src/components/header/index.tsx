@@ -1,8 +1,6 @@
 import React from 'react'
 import { BsCloudFill } from 'react-icons/bs'
-import { Container, Logo, Main, SearchInput, Logout } from './styles'
-import { Link } from 'react-router-dom'
-import { GoDashboard } from 'react-icons/go'
+import { Container, Logo, SearchInput, Logout } from './styles'
 import { BiExit } from 'react-icons/bi'
 import { SearchServer } from 'shared/SearchServiceContenxt'
 
