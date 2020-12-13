@@ -65,12 +65,30 @@ const Dashboard: React.FC = () => {
           <ServersList>
             {searchServer?.map((server) => (
               <List key={server.InstanceId}>
-                <p>{server.InstanceId}</p>
-                <p>{server.Instance}</p>
-                <p>{server.InstanceType}</p>
-                <p>{server.LaunchTime}</p>
-                <p>{server.PrivateIpAddress}</p>
-                <p>{server.InstanceState}</p>
+                <p>
+                  <small>ID:</small>
+                  {server.InstanceId}
+                </p>
+                <p>
+                  <small>INSTANCIA:</small>
+                  {server.Instance}
+                </p>
+                <p>
+                  <small>TIPO:</small>
+                  {server.InstanceType}
+                </p>
+                <p>
+                  <small>IP PRIVADO:</small>
+                  {server.LaunchTime}
+                </p>
+                <p>
+                  <small>TEMPO:</small>
+                  {server.PrivateIpAddress}
+                </p>
+                <p>
+                  <small>STATUS:</small>
+                  {server.InstanceState}
+                </p>
               </List>
             ))}
           </ServersList>
@@ -78,12 +96,30 @@ const Dashboard: React.FC = () => {
           <ServersList>
             {servers?.map((server) => (
               <List key={server.InstanceId}>
-                <p>{server.InstanceId}</p>
-                <p>{server.Instance}</p>
-                <p>{server.InstanceType}</p>
-                <p>{server.LaunchTime}</p>
-                <p>{server.PrivateIpAddress}</p>
-                <p>{server.InstanceState}</p>
+                <p>
+                  <small>ID:</small>
+                  {server.InstanceId}
+                </p>
+                <p>
+                  <small>INSTANCIA:</small>
+                  {server.Instance}
+                </p>
+                <p>
+                  <small>TIPO:</small>
+                  {server.InstanceType}
+                </p>
+                <p>
+                  <small>IP PRIVADO:</small>
+                  {server.LaunchTime}
+                </p>
+                <p>
+                  <small>TEMPO:</small>
+                  {server.PrivateIpAddress}
+                </p>
+                <p>
+                  <small>STATUS:</small>
+                  {server.InstanceState}
+                </p>
               </List>
             ))}
           </ServersList>

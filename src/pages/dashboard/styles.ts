@@ -17,11 +17,18 @@ export const Header = styled.div`
   justify-content: space-between;
 
   h1 {
+    @media (max-width: 500px) {
+      font-size: 3.5rem;
+    }
+
     font-size: 6rem;
   }
 `
 
 export const Titles = styled.div`
+  @media (max-width: 950px) {
+    display: none;
+  }
   display: grid;
   grid-template-columns: 250px 220px 150px 200px 140px 80px;
   width: 100%;
@@ -37,6 +44,25 @@ export const Titles = styled.div`
   }
 `
 export const List = styled.div`
+  @media (max-width: 950px) {
+    display: flex;
+    flex-direction: column;
+
+    p {
+      margin-left: 10px;
+      small {
+        font-weight: bold;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  @media (min-width: 950px) {
+    small {
+      display: none;
+    }
+  }
+
   display: grid;
   grid-template-columns: 250px 220px 150px 200px 140px 80px;
   width: 100%;

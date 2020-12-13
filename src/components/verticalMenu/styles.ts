@@ -2,6 +2,9 @@ import styled from 'styled-components'
 import { darken } from 'polished'
 
 export const Container = styled.div`
+  @media (max-width: 950px) {
+    display: none;
+  }
   height: 100%;
   width: 20%;
   background: #202020;
