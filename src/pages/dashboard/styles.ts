@@ -23,7 +23,7 @@ export const Header = styled.div`
 
 export const Titles = styled.div`
   display: grid;
-  grid-template-columns: 200px 220px 150px 200px 140px 140px 80px;
+  grid-template-columns: 250px 220px 150px 200px 140px 80px;
   width: 100%;
   height: 35px;
   background: rgb(247, 247, 247);
@@ -38,7 +38,7 @@ export const Titles = styled.div`
 `
 export const List = styled.div`
   display: grid;
-  grid-template-columns: 200px 220px 150px 200px 140px 140px 80px;
+  grid-template-columns: 250px 220px 150px 200px 140px 80px;
   width: 100%;
   background: #ffffff;
   border-bottom: 4px solid rgb(247, 247, 247);
@@ -58,4 +58,24 @@ export const List = styled.div`
 export const ServersList = styled.div`
   overflow: auto;
   height: 460px;
+`
+
+interface TitleProps {
+  readonly load: boolean
+}
+
+export const Loading = styled.div<TitleProps>`
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: black;
+
+  display: ${({ load }) => (load ? 'flex' : 'none')};
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  h1 {
+    color: #ffffff;
+  }
 `
