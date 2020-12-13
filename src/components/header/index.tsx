@@ -3,8 +3,12 @@ import { BsCloudFill } from 'react-icons/bs'
 import { Container, Logo, SearchInput, Logout } from './styles'
 import { BiExit } from 'react-icons/bi'
 import { SearchServer } from 'shared/SearchServiceContenxt'
+import { signOut } from '../../store/ducks/repositories/signin/actions'
+import { useDispatch } from 'react-redux'
 
 const Header: React.FC = () => {
+  const dispatch = useDispatch()
+
   return (
     <SearchServer.Consumer>
       {({ setServer, server }) => (
@@ -24,7 +28,10 @@ const Header: React.FC = () => {
           </SearchInput>
 
           <Logout>
-            <button type="button">
+            <button
+              data-testid="logout"
+              onClick={() => dispatch(signOut())}
+              type="button">
               <BiExit />
             </button>
           </Logout>
