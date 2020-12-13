@@ -28,11 +28,16 @@ export const Header = styled.div`
 `
 
 export const Titles = styled.div`
-  @media (max-width: 950px) {
+  @media (max-width: 1030px) {
     display: none;
   }
   display: grid;
-  grid-template-columns: 250px 220px 150px 200px 140px 80px;
+  grid-template-columns:
+    minmax(200px, 250px) minmax(170px, 220px) minmax(120px, 150px) minmax(
+      170px,
+      200px
+    )
+    minmax(130px, 140px) 80px;
   width: 100%;
   height: 35px;
   background: rgb(247, 247, 247);
@@ -46,7 +51,7 @@ export const Titles = styled.div`
   }
 `
 export const List = styled.div`
-  @media (max-width: 950px) {
+  @media (max-width: 1030px) {
     display: flex;
     flex-direction: column;
 
@@ -59,14 +64,19 @@ export const List = styled.div`
     }
   }
 
-  @media (min-width: 950px) {
+  @media (min-width: 1030px) {
     small {
       display: none;
     }
   }
 
   display: grid;
-  grid-template-columns: 250px 220px 150px 200px 140px 80px;
+  grid-template-columns:
+    minmax(200px, 250px) minmax(170px, 220px) minmax(120px, 150px) minmax(
+      170px,
+      200px
+    )
+    minmax(130px, 140px) 80px;
   width: 100%;
   background: #ffffff;
   border-bottom: 4px solid rgb(247, 247, 247);
