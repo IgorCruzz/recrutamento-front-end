@@ -17,8 +17,10 @@ export const Header = styled.div`
   justify-content: space-between;
 
   h1 {
+    margin-top: 10px;
+
     @media (max-width: 500px) {
-      font-size: 3.5rem;
+      font-size: 3rem;
     }
 
     font-size: 6rem;
