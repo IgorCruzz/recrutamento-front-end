@@ -3,17 +3,6 @@ import { ResponsivePie } from '@nivo/pie'
 import * as dateFns from 'date-fns'
 import { Container } from './styles'
 
-export interface IServer {
-  Instance: string
-  InstanceId: string
-  InstanceType: string
-  LaunchTime: string
-  PrivateIpAddress: string
-  InstanceState: string
-  cpu: number
-  ram: number
-}
-
 const Chart: React.FC<any> = ({ serverData }) => {
   const [servers, setServers] = useState<any[]>([])
 
