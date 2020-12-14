@@ -83,7 +83,7 @@ const Dashboard: React.FC = () => {
             </p>
           </header>
 
-          <Chart mapeando={servers} />
+          <Chart serverData={servers} />
         </Header>
 
         <Titles>

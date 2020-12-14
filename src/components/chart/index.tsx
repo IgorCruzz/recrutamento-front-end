@@ -14,11 +14,11 @@ export interface IServer {
   ram: number
 }
 
-const Chart: React.FC<any> = ({ mapeando }) => {
+const Chart: React.FC<any> = ({ serverData }) => {
   const [servers, setServers] = useState<any[]>([])
 
   useEffect(() => {
-    const serverList = mapeando
+    const serverList = serverData
       .map((server: any) => {
         const checkState =
           server.InstanceState === 'On' ? dateFns.getHours(new Date()) * 10 : 0
@@ -34,9 +34,8 @@ const Chart: React.FC<any> = ({ mapeando }) => {
         return b.value - a.value
       })
       .slice(0, 10)
-    console.log(serverList)
     setServers(serverList)
-  }, [mapeando])
+  }, [serverData])
 
   return (
     <Container>
@@ -49,9 +48,6 @@ const Chart: React.FC<any> = ({ mapeando }) => {
         colors={{ scheme: 'nivo' }}
         borderColor={{ from: 'color', modifiers: [['darker', 2.6]] }}
         sortByValue={true}
-        radialLabel={function (e) {
-          return e.label
-        }}
         radialLabelsTextXOffset={15}
         radialLabelsTextColor="#333333"
         radialLabelsLinkOffset={-15}
