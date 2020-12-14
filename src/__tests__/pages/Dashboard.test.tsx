@@ -6,7 +6,6 @@ import MockAdapter from 'axios-mock-adapter'
 import React from 'react'
 import Dashboard from '../../pages/dashboard'
 import { cloudApi } from '../../services/cloudApi'
-import { SearchServer } from 'shared/SearchServiceContenxt'
 
 const apiMock = new MockAdapter(cloudApi)
 

@@ -40,8 +40,8 @@ const Dashboard: React.FC = () => {
 
   useEffect(() => {
     const regex = new RegExp(`${server}`, 'gi')
-    const servera = servers.filter((server) => server.Instance.match(regex))
-    setSearchServer(servera)
+    const findServer = servers.filter((server) => server.Instance.match(regex))
+    setSearchServer(findServer)
   }, [server])
 
   useEffect(() => {
