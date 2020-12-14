@@ -8,9 +8,8 @@ export const Container = styled.div`
 export const Header = styled.div`
   @media (max-width: 970px) {
     flex-direction: column;
-    background: red;
   }
-  background: red;
+
   padding: 25px;
   background: white;
   width: 100%;
@@ -49,7 +48,7 @@ export const Titles = styled.div`
       170px,
       200px
     )
-    minmax(130px, 140px) 80px 140px 80px;
+    minmax(130px, 140px) minmax(70px, 100px) 150px 80px;
   width: 100%;
   height: 35px;
   background: rgb(247, 247, 247);
@@ -57,9 +56,9 @@ export const Titles = styled.div`
   p {
     display: flex;
     align-items: center;
+    justify-content: center;
     font-weight: bold;
     color: rgb(85, 85, 85);
-    padding-left: 5px;
   }
 `
 export const List = styled.div`
@@ -88,7 +87,7 @@ export const List = styled.div`
       170px,
       200px
     )
-    minmax(130px, 140px) 80px 140px 80px;
+    minmax(130px, 140px) minmax(70px, 100px) 150px 80px;
   width: 100%;
   background: #ffffff;
   border-bottom: 4px solid rgb(247, 247, 247);
@@ -100,6 +99,7 @@ export const List = styled.div`
   p {
     display: flex;
     align-items: center;
+    justify-content: center;
     height: 40px;
     padding-left: 5px;
     color: #363636;

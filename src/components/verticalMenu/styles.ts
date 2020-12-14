@@ -8,7 +8,7 @@ export const Container = styled.div`
   height: 100%;
   width: 20%;
   background: #202020;
-  margin-right: 10px;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;

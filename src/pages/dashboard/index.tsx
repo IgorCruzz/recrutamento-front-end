@@ -125,7 +125,7 @@ const Dashboard: React.FC = () => {
                   <small>CPU:</small>
                   {server.cpu}
                 </p>
-                <p>
+                <p id="ram">
                   <small>MEMORIA RAM:</small>
                   {server.InstanceState}
                 </p>
