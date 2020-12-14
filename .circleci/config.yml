@@ -1,22 +1,14 @@
 version: 2.1
-jobs:
-  build:
-    docker:
-      - image: circleci/node:8
-    steps:
-      - checkout
-      - run:
-          name: Install Dependencies
-          command: npm install
-      - run:
-          name: Run Tests
-          command: npm test -- --coverage --watchAll=false --silent
 orbs:
+  react: thefrontside/react@0.2.0
   heroku: circleci/heroku@0.0.10
 workflows:
    heroku_deploy:
     jobs:
-      - build
+      - react/install
+      - react/test:
+          requires:
+            - react/install
       - heroku/deploy-via-git:
             requires:
-                - build
+                - react/test
