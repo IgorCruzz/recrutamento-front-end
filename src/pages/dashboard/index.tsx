@@ -5,6 +5,7 @@ import { Container, Header, Titles, List, ServersList, Loading } from './styles'
 import { BsServer } from 'react-icons/bs'
 import { cloudApi } from '../../services/cloudApi'
 import { SearchServer } from 'shared/SearchServiceContenxt'
+import Chart from '../../components/chart'
 
 export interface IServer {
   Instance: string
@@ -13,6 +14,8 @@ export interface IServer {
   LaunchTime: string
   PrivateIpAddress: string
   InstanceState: string
+  cpu: number
+  ram: number
 }
 
 const Dashboard: React.FC = () => {
@@ -23,7 +26,14 @@ const Dashboard: React.FC = () => {
 
   useEffect(() => {
     cloudApi.get('/').then((result) => {
-      setServers(result.data)
+      const serverList = result.data.map((servers: any) => {
+        return {
+          ...servers,
+          cpu: Math.floor(Math.random() * 4) + 1,
+          ram: Math.floor(Math.random() * 9) + 2,
+        }
+      })
+      setServers(serverList)
     })
   }, [])
 
@@ -50,6 +60,10 @@ const Dashboard: React.FC = () => {
             <BsServer />
             Lista de servidores
           </h1>
+
+          <div>
+            <Chart mapeando={servers} />
+          </div>
         </Header>
 
         <Titles>
@@ -58,6 +72,8 @@ const Dashboard: React.FC = () => {
           <p>TIPO</p>
           <p>TEMPO</p>
           <p>IP PRIVADO</p>
+          <p>CPU</p>
+          <p>MEMORIA RAM</p>
           <p>STATUS</p>
         </Titles>
 
@@ -84,6 +100,14 @@ const Dashboard: React.FC = () => {
                 <p>
                   <small>TEMPO:</small>
                   {server.PrivateIpAddress}
+                </p>
+                <p>
+                  <small>CPU:</small>
+                  {server.cpu}
+                </p>
+                <p>
+                  <small>MEMORIA RAM:</small>
+                  {server.InstanceState}
                 </p>
                 <p>
                   <small>STATUS:</small>
@@ -115,6 +139,14 @@ const Dashboard: React.FC = () => {
                 <p>
                   <small>TEMPO:</small>
                   {server.PrivateIpAddress}
+                </p>
+                <p>
+                  <small>CPU:</small>
+                  {server.cpu}
+                </p>
+                <p>
+                  <small>MEMORIA RAM:</small>
+                  {server.ram}
                 </p>
                 <p>
                   <small>STATUS:</small>

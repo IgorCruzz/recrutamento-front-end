@@ -5,6 +5,7 @@ export const INITIAL_VALUES = {
   signed: false,
   loading: false,
   token: null,
+  time: null,
 }
 
 export function signIn(state = INITIAL_VALUES, action: any) {
@@ -22,11 +23,14 @@ export function signIn(state = INITIAL_VALUES, action: any) {
         draft.loading = false
         draft.signed = true
         draft.token = action.payload.token
+        draft.time = action.payload.time
+
         break
       }
       case RepositoriesTypes.SIGNOUT: {
         draft.signed = false
         draft.token = null
+        draft.time = null
         break
       }
       default:

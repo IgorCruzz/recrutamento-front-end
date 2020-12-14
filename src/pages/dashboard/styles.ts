@@ -9,11 +9,11 @@ export const Header = styled.div`
   padding: 25px;
   background: white;
   width: 100%;
-  height: 25%;
+  height: 55%;
   color: #1c1c1c;
 
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
 
   h1 {
@@ -37,7 +37,7 @@ export const Titles = styled.div`
       170px,
       200px
     )
-    minmax(130px, 140px) 80px;
+    minmax(130px, 140px) minmax(130px, 140px) minmax(130px, 140px) 80px;
   width: 100%;
   height: 35px;
   background: rgb(247, 247, 247);
@@ -76,7 +76,7 @@ export const List = styled.div`
       170px,
       200px
     )
-    minmax(130px, 140px) 80px;
+    minmax(130px, 140px) minmax(130px, 140px) minmax(130px, 140px) 80px;
   width: 100%;
   background: #ffffff;
   border-bottom: 4px solid rgb(247, 247, 247);
@@ -107,6 +107,7 @@ export const Loading = styled.div<TitleProps>`
   height: 100%;
   width: 100%;
   background: black;
+  z-index: 999;
 
   display: ${({ load }) => (load ? 'flex' : 'none')};
   align-items: center;

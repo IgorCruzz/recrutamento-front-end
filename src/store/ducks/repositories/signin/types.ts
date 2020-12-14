@@ -14,5 +14,6 @@ export interface ILoginState {
   signIn: {
     signed?: boolean
     loading?: boolean
+    time?: Date
   }
 }

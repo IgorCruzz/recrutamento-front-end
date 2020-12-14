@@ -11,7 +11,7 @@ import * as redux from 'react-redux'
 jest.mock('react-redux')
 
 describe('Header', () => {
-  it('should be render', () => {
+  it('should be render.', () => {
     expect(render(<Header />)).toBeTruthy()
   })
 

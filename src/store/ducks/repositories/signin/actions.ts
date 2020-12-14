@@ -15,11 +15,12 @@ export const signInFailure = () => {
 
 export const signInSuccess = (
   token: string,
-  user: { id: number; email: string }
+  user: { id: number; email: string },
+  time: Date
 ) => {
   return {
     type: RepositoriesTypes.SIGNIN_SUCCESS,
-    payload: { token, user },
+    payload: { token, user, time },
   }
 }
 
