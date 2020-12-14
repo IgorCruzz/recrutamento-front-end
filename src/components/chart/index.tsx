@@ -43,7 +43,7 @@ const Chart: React.FC<any> = ({ serverData }) => {
       <ResponsivePie
         data={servers}
         valueFormat=" >-$0,~"
-        margin={{ top: 50, right: 80, bottom: 80, left: 80 }}
+        margin={{ top: 30, right: 80, bottom: 50, left: 80 }}
         cornerRadius={3}
         colors={{ scheme: 'nivo' }}
         borderColor={{ from: 'color', modifiers: [['darker', 2.6]] }}
