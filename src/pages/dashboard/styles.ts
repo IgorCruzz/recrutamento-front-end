@@ -6,12 +6,17 @@ export const Container = styled.div`
 `
 
 export const Header = styled.div`
+  @media (max-width: 970px) {
+    flex-direction: column;
+    background: red;
+  }
+  background: red;
   padding: 25px;
   background: white;
   width: 100%;
-  height: 55%;
+  height: 50%;
   color: #1c1c1c;
-
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -33,10 +38,9 @@ export const Header = styled.div`
     font-size: 6rem;
   }
 `
-export const Graphic = styled.div``
 
 export const Titles = styled.div`
-  @media (max-width: 1030px) {
+  @media (max-width: 1270px) {
     display: none;
   }
   display: grid;
@@ -59,7 +63,7 @@ export const Titles = styled.div`
   }
 `
 export const List = styled.div`
-  @media (max-width: 1030px) {
+  @media (max-width: 1270px) {
     display: flex;
     flex-direction: column;
 
@@ -72,7 +76,7 @@ export const List = styled.div`
     }
   }
 
-  @media (min-width: 1030px) {
+  @media (min-width: 1270px) {
     small {
       display: none;
     }
@@ -103,7 +107,7 @@ export const List = styled.div`
 `
 export const ServersList = styled.div`
   overflow: auto;
-  height: 460px;
+  height: 295px;
 `
 
 interface TitleProps {

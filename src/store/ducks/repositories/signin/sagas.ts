@@ -12,9 +12,7 @@ export function* signIn(action: any) {
 
     api.defaults.headers.Authorization = `Bearer ${token}`
 
-    const time = new Date()
-
-    yield put(signInSuccess(token, user, time))
+    yield put(signInSuccess(token, user))
   } catch (e) {
     yield put(signInFailure())
     toast.error(e.response.data.error)

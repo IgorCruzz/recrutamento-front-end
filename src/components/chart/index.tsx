@@ -1,13 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { ResponsivePie } from '@nivo/pie'
-import styled from 'styled-components'
-import { RouteComponentProps } from '@reach/router'
 import * as dateFns from 'date-fns'
+import { Container } from './styles'
 
-const Container = styled.div`
-  width: 450px;
-  height: 450px;
-`
 export interface IServer {
   Instance: string
   InstanceId: string
@@ -17,10 +12,6 @@ export interface IServer {
   InstanceState: string
   cpu: number
   ram: number
-}
-
-interface Props extends RouteComponentProps {
-  mapeando: IServer[]
 }
 
 const Chart: React.FC<any> = ({ mapeando }) => {
@@ -34,7 +25,7 @@ const Chart: React.FC<any> = ({ mapeando }) => {
 
         return {
           id: server.InstanceId,
-          label: server.Istance,
+          label: server.Instance,
           value: server.ram * 5 + server.cpu * 3 + checkState,
           color: 'hsl(193, 70%, 50%)',
         }
@@ -43,46 +34,41 @@ const Chart: React.FC<any> = ({ mapeando }) => {
         return b.value - a.value
       })
       .slice(0, 10)
-
+    console.log(serverList)
     setServers(serverList)
   }, [mapeando])
 
   return (
     <Container>
+      <p>10 servidores com mais gastos diários(até o momento)</p>
       <ResponsivePie
         data={servers}
         valueFormat=" >-$0,~"
         margin={{ top: 20, right: 80, bottom: 80, left: 80 }}
-        innerRadius={0.6}
         cornerRadius={3}
-        colors={{ scheme: 'purple_orange' }}
+        colors={{ scheme: 'nivo' }}
         borderColor={{ from: 'color', modifiers: [['darker', 2.6]] }}
+        sortByValue={true}
+        radialLabel={function (e) {
+          return e.label
+        }}
         radialLabelsTextXOffset={15}
         radialLabelsTextColor="#333333"
-        radialLabelsLinkOffset={-16}
+        radialLabelsLinkOffset={-15}
         radialLabelsLinkHorizontalLength={9}
         radialLabelsLinkColor={{ from: 'color', modifiers: [] }}
         sliceLabelsRadiusOffset={0.6}
         sliceLabelsSkipAngle={10}
-        sliceLabelsTextColor="#faeeee"
+        sliceLabelsTextColor="#333333"
         defs={[
           {
             id: 'dots',
             type: 'patternDots',
             background: 'inherit',
             color: 'rgba(255, 255, 255, 0.3)',
-            size: 9,
+            size: 1,
             padding: 1,
             stagger: true,
-          },
-          {
-            id: 'lines',
-            type: 'patternLines',
-            background: 'inherit',
-            color: 'rgba(255, 255, 255, 0.3)',
-            rotation: -45,
-            lineWidth: 6,
-            spacing: 10,
           },
         ]}
         fill={[]}

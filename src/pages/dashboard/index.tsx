@@ -1,15 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react'
 import { Helmet } from 'react-helmet'
 import ReactLoading from 'react-loading'
-import {
-  Container,
-  Header,
-  Titles,
-  List,
-  ServersList,
-  Loading,
-  Graphic,
-} from './styles'
+import { Container, Header, Titles, List, ServersList, Loading } from './styles'
 import { BsServer } from 'react-icons/bs'
 import { cloudApi } from '../../services/cloudApi'
 import { SearchServer } from 'shared/SearchServiceContenxt'
@@ -90,9 +82,8 @@ const Dashboard: React.FC = () => {
               Servidores offline:<strong>{serversStat.Off}</strong>{' '}
             </p>
           </header>
-          <Graphic>
-            <Chart mapeando={servers} />
-          </Graphic>
+
+          <Chart mapeando={servers} />
         </Header>
 
         <Titles>
