@@ -1,7 +1,15 @@
 import React, { useEffect, useState, useContext } from 'react'
 import { Helmet } from 'react-helmet'
 import ReactLoading from 'react-loading'
-import { Container, Header, Titles, List, ServersList, Loading } from './styles'
+import {
+  Container,
+  Header,
+  Titles,
+  List,
+  ServersList,
+  Loading,
+  Graphic,
+} from './styles'
 import { BsServer } from 'react-icons/bs'
 import { cloudApi } from '../../services/cloudApi'
 import { SearchServer } from 'shared/SearchServiceContenxt'
@@ -21,6 +29,7 @@ export interface IServer {
 const Dashboard: React.FC = () => {
   const [servers, setServers] = useState<IServer[]>([])
   const [searchServer, setSearchServer] = useState<IServer[]>([])
+  const [serversStat, setServersStat] = useState({ On: 0, Off: 0 })
 
   const { server } = useContext(SearchServer)
 
@@ -43,6 +52,19 @@ const Dashboard: React.FC = () => {
     setSearchServer(servera)
   }, [server])
 
+  useEffect(() => {
+    const serverOn = servers.filter((server) => server.InstanceState === 'On')
+      .length
+
+    const serverOff = servers.filter((server) => server.InstanceState === 'Off')
+      .length
+
+    setServersStat({
+      On: serverOn,
+      Off: serverOff,
+    })
+  }, [servers])
+
   return (
     <>
       <Helmet>
@@ -54,16 +76,23 @@ const Dashboard: React.FC = () => {
       </Loading>
       <Container>
         <Header>
-          <strong>/dashboard</strong>
+          <header>
+            <strong>/dashboard</strong>
 
-          <h1>
-            <BsServer />
-            Lista de servidores
-          </h1>
-
-          <div>
+            <h1>
+              <BsServer />
+              Lista de servidores
+            </h1>
+            <p>
+              Servidores online: <strong>{serversStat.On}</strong>{' '}
+            </p>
+            <p>
+              Servidores offline:<strong>{serversStat.Off}</strong>{' '}
+            </p>
+          </header>
+          <Graphic>
             <Chart mapeando={servers} />
-          </div>
+          </Graphic>
         </Header>
 
         <Titles>

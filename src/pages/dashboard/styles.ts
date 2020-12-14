@@ -16,8 +16,15 @@ export const Header = styled.div`
   flex-direction: row;
   justify-content: space-between;
 
+  header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
   h1 {
-    margin-top: 10px;
+    margin-top: 5px;
 
     @media (max-width: 500px) {
       font-size: 3rem;
@@ -26,6 +33,7 @@ export const Header = styled.div`
     font-size: 6rem;
   }
 `
+export const Graphic = styled.div``
 
 export const Titles = styled.div`
   @media (max-width: 1030px) {

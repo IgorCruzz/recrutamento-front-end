@@ -27,10 +27,6 @@ const Chart: React.FC<any> = ({ mapeando }) => {
   const [servers, setServers] = useState<any[]>([])
 
   useEffect(() => {
-    console.log(dateFns.getHours(new Date()))
-  }, [])
-
-  useEffect(() => {
     const serverList = mapeando
       .map((server: any) => {
         const checkState =
