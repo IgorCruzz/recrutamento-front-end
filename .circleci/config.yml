@@ -12,3 +12,4 @@ workflows:
       - heroku/deploy-via-git:
             requires:
                 - react/test
+
