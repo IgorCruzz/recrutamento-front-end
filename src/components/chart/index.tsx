@@ -43,12 +43,15 @@ const Chart: React.FC<any> = ({ serverData }) => {
       <ResponsivePie
         data={servers}
         valueFormat=" >-$0,~"
-        margin={{ top: 30, right: 80, bottom: 50, left: 80 }}
+        margin={{ top: 30, right: 50, bottom: 50, left: 50 }}
         cornerRadius={3}
         colors={{ scheme: 'nivo' }}
         borderColor={{ from: 'color', modifiers: [['darker', 2.6]] }}
         sortByValue={true}
-        radialLabelsTextXOffset={15}
+        radialLabel={function (e) {
+          return e.label
+        }}
+        radialLabelsTextXOffset={1}
         radialLabelsTextColor="#333333"
         radialLabelsLinkOffset={-15}
         radialLabelsLinkHorizontalLength={9}
