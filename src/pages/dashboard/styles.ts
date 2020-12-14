@@ -45,7 +45,7 @@ export const Titles = styled.div`
       170px,
       200px
     )
-    minmax(130px, 140px) minmax(130px, 140px) minmax(130px, 140px) 80px;
+    minmax(130px, 140px) 80px 140px 80px;
   width: 100%;
   height: 35px;
   background: rgb(247, 247, 247);
@@ -84,7 +84,7 @@ export const List = styled.div`
       170px,
       200px
     )
-    minmax(130px, 140px) minmax(130px, 140px) minmax(130px, 140px) 80px;
+    minmax(130px, 140px) 80px 140px 80px;
   width: 100%;
   background: #ffffff;
   border-bottom: 4px solid rgb(247, 247, 247);

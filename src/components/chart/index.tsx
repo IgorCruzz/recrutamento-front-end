@@ -34,7 +34,7 @@ const Chart: React.FC<any> = ({ mapeando }) => {
 
         return {
           id: server.InstanceId,
-          label: server.Instance,
+          label: server.Istance,
           value: server.ram * 5 + server.cpu * 3 + checkState,
           color: 'hsl(193, 70%, 50%)',
         }
@@ -51,6 +51,7 @@ const Chart: React.FC<any> = ({ mapeando }) => {
     <Container>
       <ResponsivePie
         data={servers}
+        valueFormat=" >-$0,~"
         margin={{ top: 20, right: 80, bottom: 80, left: 80 }}
         innerRadius={0.6}
         cornerRadius={3}
@@ -84,56 +85,7 @@ const Chart: React.FC<any> = ({ mapeando }) => {
             spacing: 10,
           },
         ]}
-        fill={[
-          {
-            match: {
-              id: 'ruby',
-            },
-            id: 'dots',
-          },
-          {
-            match: {
-              id: 'c',
-            },
-            id: 'dots',
-          },
-          {
-            match: {
-              id: 'go',
-            },
-            id: 'dots',
-          },
-          {
-            match: {
-              id: 'python',
-            },
-            id: 'dots',
-          },
-          {
-            match: {
-              id: 'scala',
-            },
-            id: 'lines',
-          },
-          {
-            match: {
-              id: 'lisp',
-            },
-            id: 'lines',
-          },
-          {
-            match: {
-              id: 'elixir',
-            },
-            id: 'lines',
-          },
-          {
-            match: {
-              id: 'javascript',
-            },
-            id: 'lines',
-          },
-        ]}
+        fill={[]}
         legends={[]}
       />
     </Container>
