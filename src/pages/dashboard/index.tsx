@@ -34,6 +34,7 @@ const Dashboard: React.FC = () => {
           ram: Math.floor(Math.random() * 9) + 2,
         }
       })
+      console.log(serverList[0])
       setServers(serverList)
     })
   }, [])
@@ -90,8 +91,8 @@ const Dashboard: React.FC = () => {
           <p>ID</p>
           <p>INSTANCIA</p>
           <p>TIPO</p>
-          <p>TEMPO</p>
           <p>IP PRIVADO</p>
+          <p>TEMPO</p>
           <p>CPU</p>
           <p>MEMORIA RAM</p>
           <p>STATUS</p>
@@ -115,11 +116,12 @@ const Dashboard: React.FC = () => {
                 </p>
                 <p>
                   <small>IP PRIVADO:</small>
-                  {server.LaunchTime}
+                  {server.PrivateIpAddress}
                 </p>
+
                 <p>
                   <small>TEMPO:</small>
-                  {server.PrivateIpAddress}
+                  {server.LaunchTime}
                 </p>
                 <p>
                   <small>CPU:</small>
@@ -127,7 +129,7 @@ const Dashboard: React.FC = () => {
                 </p>
                 <p id="ram">
                   <small>MEMORIA RAM:</small>
-                  {server.InstanceState}
+                  {server.ram}
                 </p>
                 <p>
                   <small>STATUS:</small>
@@ -154,17 +156,17 @@ const Dashboard: React.FC = () => {
                 </p>
                 <p>
                   <small>IP PRIVADO:</small>
-                  {server.LaunchTime}
+                  {server.PrivateIpAddress}
                 </p>
                 <p>
                   <small>TEMPO:</small>
-                  {server.PrivateIpAddress}
+                  {server.LaunchTime}
                 </p>
                 <p>
                   <small>CPU:</small>
                   {server.cpu}
                 </p>
-                <p>
+                <p id="ram">
                   <small>MEMORIA RAM:</small>
                   {server.ram}
                 </p>

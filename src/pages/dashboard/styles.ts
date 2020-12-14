@@ -35,6 +35,7 @@ export const Header = styled.div`
 
     @media (max-width: 500px) {
       font-size: 3rem;
+      margin-bottom: 10px;
     }
 
     font-size: 6rem;
@@ -110,7 +111,7 @@ export const List = styled.div`
 `
 export const ServersList = styled.div`
   overflow: auto;
-  height: 295px;
+  height: 285px;
 `
 
 interface TitleProps {
