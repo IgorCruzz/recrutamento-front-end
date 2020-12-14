@@ -1,13 +1,12 @@
 import 'babel-polyfill'
 import '@testing-library/jest-dom'
 import '@testing-library/jest-dom/extend-expect'
-import { render, screen, fireEvent, waitFor } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import MockAdapter from 'axios-mock-adapter'
-import * as redux from 'react-redux'
 import React from 'react'
 import Dashboard from '../../pages/dashboard'
-import axios from 'axios'
 import { cloudApi } from '../../services/cloudApi'
+import { SearchServer } from 'shared/SearchServiceContenxt'
 
 const apiMock = new MockAdapter(cloudApi)
 

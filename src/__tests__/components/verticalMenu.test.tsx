@@ -32,4 +32,14 @@ describe('VerticalMenu', () => {
 
     expect(dispatch).toBeCalled()
   })
+
+  it('should able search for a server', () => {
+    render(<VerticalMenu />)
+
+    fireEvent.input(screen.getByPlaceholderText('Procurar servidor...'), {
+      target: { value: 'server name' },
+    })
+
+    expect(screen.getByPlaceholderText('Procurar servidor...')).toBeTruthy()
+  })
 })
