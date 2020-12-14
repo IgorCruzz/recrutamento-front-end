@@ -1,7 +1,12 @@
 version: 2.1
 orbs:
+  node: circleci/node@2.0.2
   heroku: circleci/heroku@0.0.10
 workflows:
+  matrix-tests:
+    jobs:
+      - checkout
+      - ls -a
   heroku_deploy:
     jobs:
       - heroku/deploy-via-git
