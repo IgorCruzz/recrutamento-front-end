@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { ResponsivePie } from '@nivo/pie'
 import styled from 'styled-components'
 import { RouteComponentProps } from '@reach/router'
+import * as dateFns from 'date-fns'
 
 const Container = styled.div`
   width: 450px;
@@ -26,12 +27,19 @@ const Chart: React.FC<any> = ({ mapeando }) => {
   const [servers, setServers] = useState<any[]>([])
 
   useEffect(() => {
+    console.log(dateFns.getHours(new Date()))
+  }, [])
+
+  useEffect(() => {
     const serverList = mapeando
       .map((server: any) => {
+        const checkState =
+          server.InstanceState === 'On' ? dateFns.getHours(new Date()) * 10 : 0
+
         return {
           id: server.InstanceId,
           label: server.Instance,
-          value: Math.floor(Math.random() * 9) + 2,
+          value: server.ram * 5 + server.cpu * 3 + checkState,
           color: 'hsl(193, 70%, 50%)',
         }
       })
