@@ -11,7 +11,7 @@
 > ## :bar_chart: Screenshots
 
 <img src="https://github.com/IgorCruzz/recrutamento-front-end/blob/master/screenshots/Dashboard.jpg" alt="-" />
-<img src="https://github.com/IgorCruzz/WOLFZZ/blob/master/screenshots/LOGIN.png" alt="-" />
+<img src="https://github.com/IgorCruzz/recrutamento-front-end/blob/master/screenshots/Signin.jpg" alt="-" />
 <img src="https://github.com/IgorCruzz/recrutamento-front-end/blob/master/screenshots/mobile.jpg" alt="-" />
 
 </br>
