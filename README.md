@@ -12,7 +12,7 @@
 
 <img src="https://github.com/IgorCruzz/recrutamento-front-end/blob/master/screenshots/Dashboard.jpg" alt="-" />
 <img src="https://github.com/IgorCruzz/recrutamento-front-end/blob/master/screenshots/Signin.jpg" alt="-" />
-<img src="https://github.com/IgorCruzz/recrutamento-front-end/blob/master/screenshots/mobile.jpg" alt="-" />
+<p align="center"><img src="https://github.com/IgorCruzz/recrutamento-front-end/blob/master/screenshots/mobile.jpg" alt="-" /></>
 
 </br>
 
