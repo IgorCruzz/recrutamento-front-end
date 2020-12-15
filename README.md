@@ -8,6 +8,14 @@
 
 </br>
 
+> ## :bar_chart: Screenshots
+
+<img src="https://github.com/IgorCruzz/recrutamento-front-end/blob/master/screenshots/Dashboard.jpg" alt="-" />
+<img src="https://github.com/IgorCruzz/WOLFZZ/blob/master/screenshots/LOGIN.png" alt="-" />
+<img src="https://github.com/IgorCruzz/recrutamento-front-end/blob/master/screenshots/mobile.jpg" alt="-" />
+
+</br>
+
 > ## :bar_chart: About the project
 
 Está aplicação foi desenvolvida com ReactJS, foi projetada para listar servidores do sistema nuvemWEB mostrando todos os servidores estando online ou offline e listando os 10 servidores com mais consumo diário, sendo como requerimento para ve-los, precisa criar uma conta.
