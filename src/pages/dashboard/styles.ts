@@ -8,6 +8,8 @@ export const Container = styled.div`
 export const Header = styled.div`
   @media (max-width: 970px) {
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   padding: 25px;
