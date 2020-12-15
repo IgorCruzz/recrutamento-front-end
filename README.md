@@ -16,8 +16,10 @@ Está aplicação foi desenvolvida com ReactJS, foi projetada para listar servid
 
 > ## :bar_chart: Enviroment variables
 
+```bash
 REACT_APP_API_KEY => (INSIRA O BEARER TOKEN ENVIÁDO PELA API DE LISTAGEM DE SERVIDORES)
 REACT_APP_URL => (INSIRA A URL DA API VINDA DO BACKEND DESTE PROJETO)
+```
 
 </br>
 
