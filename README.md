@@ -1,6 +1,7 @@
 <h1>:desktop_computer: Frontend</h1>
 
 <p align="center">nuvemWEB - http://nuvem-web.herokuapp.com/</a></p>
+<a href='https://coveralls.io/github/IgorCruzz/recrutamento-front-end?branch=master'><img src='https://coveralls.io/repos/github/IgorCruzz/recrutamento-front-end/badge.svg?branch=master' alt='Coverage Status' /></a>
 
 <p align="center">
   <img alt="GitHub" src="https://img.shields.io/badge/license-MIT-orange?color=%237D40E7">

@@ -78,9 +78,8 @@
     "test": "react-scripts test --env=jest-environment-jsdom-sixteen --silent",
     "test:ci": "yarn test -- --coverage --watchAll=false --silent",
     "test:staged": "yarn test -- --findRelatedTests -- --watchAll=false",
-
     "eject": "react-scripts eject",
-    "test:coveralls": "coveralls < coverage/lcov.info"
+    "test:coveralls": "yarn test:ci && coveralls < coverage/lcov.info"
   },
   "browserslist": {
     "production": [
